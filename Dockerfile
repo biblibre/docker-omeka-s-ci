@@ -14,11 +14,11 @@ RUN apt-get update && apt-get install -y \
     && apt-get update && apt-get install -y nodejs \
     && rm -rf /var/lib/apt/lists/*
 
-ARG OMEKA_TAG=v3.0.2
+ARG OMEKA_TAG=v3.1.1
 
 WORKDIR /usr/src/omeka-s
 RUN git clone --depth 1 --branch $OMEKA_TAG https://github.com/omeka/omeka-s.git . \
-    && npm install \
+    && npm ci \
     && npx gulp init \
     && rm -f application/test/config/database.ini
 
