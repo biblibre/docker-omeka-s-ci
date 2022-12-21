@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
     && pecl install solr \
     && docker-php-ext-enable xdebug solr \
     && cp $PHP_INI_DIR/php.ini-development $PHP_INI_DIR/php.ini \
-    && curl -sSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - \
+    && curl -sSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key > /etc/apt/trusted.gpg.d/nodesource.asc \
     && echo "deb https://deb.nodesource.com/node_14.x buster main" > /etc/apt/sources.list.d/nodesource.list \
     && apt-get update && apt-get install -y nodejs \
     && rm -rf /var/lib/apt/lists/*
