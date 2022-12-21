@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y \
     && apt-get update && apt-get install -y nodejs \
     && rm -rf /var/lib/apt/lists/*
 
-ARG OMEKA_TAG=v3.1.1
+ARG OMEKA_TAG=v3.2.3
 
 WORKDIR /usr/src/omeka-s
 RUN git clone --depth 1 --branch $OMEKA_TAG https://github.com/omeka/omeka-s.git . \
