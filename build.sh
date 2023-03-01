@@ -9,6 +9,9 @@ tags="$tags 3.2.3-php8.0"
 tags="$tags 4.0.0-php8.0"
 tags="$tags 4.0.0-php8.1"
 tags="$tags 4.0.0-php8.2"
+tags="$tags 4.0.1-php8.0"
+tags="$tags 4.0.1-php8.1"
+tags="$tags 4.0.1-php8.2"
 
 for tag in $tags; do
     docker build -t biblibre/omeka-s-ci:$tag $tag
